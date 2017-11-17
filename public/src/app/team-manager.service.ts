@@ -6,7 +6,7 @@ export class TeamManagerService {
   constructor(private _http: Http) { }
 
   retrieve(callback) {
-    this._http.get("http://localhost:8000/player").subscribe(
+    this._http.get("/player").subscribe(
       (res) => {
         callback(res.json());
       },
@@ -17,7 +17,7 @@ export class TeamManagerService {
   }
 
   create(data) {
-    this._http.post("http://localhost:8000/player", data).subscribe(
+    this._http.post("/player", data).subscribe(
       (res) => {
         console.log(res.json());
         console.log("success create");
@@ -30,7 +30,7 @@ export class TeamManagerService {
   }
 
   deletePlayer(id) {
-    this._http.delete("http://localhost:8000/player/destroy/" + id).subscribe(
+    this._http.delete("/player/destroy/" + id).subscribe(
       (res) => {
         console.log("success delete");
       },
