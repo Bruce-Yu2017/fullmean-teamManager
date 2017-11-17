@@ -1,0 +1,8 @@
+<h1>Add player</h1>
+<form (submit) = "onSubmit()">
+  Player name: <input type="text" name="name" [(ngModel)] ="player.name" required #name = "ngModel"><br>
+  {{name.errors | json}} <br>
+  preferred position: <input type="text" name="position" [(ngModel)] = "player.position" required #position = "ngModel"><br>
+  {{position.errors | json}} <br>
+  <input type="submit" value="Add">
+</form>

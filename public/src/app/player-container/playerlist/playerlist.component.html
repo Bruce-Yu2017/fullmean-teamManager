@@ -1,0 +1,14 @@
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Prefered position</th>
+    <th>Actions</th>
+  </tr>
+  <tbody *ngIf = "players">
+    <tr *ngFor = "let p of players ">
+      <td>{{p.name}}</td>
+      <td>{{p.position}}</td>
+      <button (click) = "delete(p._id)">Delete</button>
+    </tr>
+  </tbody>
+</table>
